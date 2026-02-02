@@ -7,6 +7,13 @@ assignees: Sethispr
 
 ---
 
+<!--
+Issue template
+To Use this Template:
+* Fill out what you can
+* Delete what you do not fill out
+-->
+
 #### Feature Description
 * What you want to be added
 * Is your feature related to a problem you have in the site (ex: I hate when..)
