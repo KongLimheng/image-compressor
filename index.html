@@ -36,10 +36,6 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -62,144 +58,11 @@
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              gleam: {
-                pink: '#ffaff3',
-                dark: '#292d3e',
-                cream: '#fff9f5',
-                purple: '#5e5086',
-                charcoal: '#222222'
-              },
-              dark: {
-                bg: '#0f172a',
-                card: '#1e293b',
-                border: '#334155',
-                text: '#f1f5f9',
-                muted: '#94a3b8'
-              }
-            },
-            fontFamily: {
-              sans: ['"Fredoka"', '"Outfit"', 'sans-serif'],
-              display: ['"Outfit"', 'sans-serif'],
-              mono: ['"Courier New"', 'monospace'] 
-            },
-            borderRadius: {
-              'xl': '1rem',
-              '2xl': '1.5rem',
-              '3xl': '2rem',
-            },
-            animation: {
-              'bounce-slow': 'bounce 3s infinite',
-              'progress-simulate': 'progressSim 4s ease-out forwards',
-            },
-            keyframes: {
-              progressSim: {
-                '0%': { transform: 'scaleX(0.15)' },
-                '50%': { transform: 'scaleX(0.7)' },
-                '100%': { transform: 'scaleX(0.92)' },
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        background-color: #fff9f5;
-        color: #292d3e;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-
-      .dark body {
-        background-color: #020617; 
-        color: #f1f5f9;
-      }
-      
-      .bg-rainbow-gradient {
-        background: linear-gradient(135deg, 
-          #ffaff3 0%, 
-          #ffcba4 20%, 
-          #fffeb0 40%, 
-          #c1ffc1 60%, 
-          #c1f0ff 80%, 
-          #e0c1ff 100%
-        );
-        background-attachment: fixed;
-      }
-
-      /* Default: Hidden Scrollbar */
-      ::-webkit-scrollbar {
-        width: 0px;
-        height: 0px;
-        background: transparent;
-      }
-      * {
-        scrollbar-width: none;
-      }
-
-      /* Visible Scrollbar Class */
-      body.show-scrollbar ::-webkit-scrollbar {
-        width: 10px;
-      }
-      body.show-scrollbar * {
-        scrollbar-width: auto;
-      }
-
-      body.show-scrollbar ::-webkit-scrollbar-track {
-        background: #fff9f5;
-      }
-      .dark body.show-scrollbar ::-webkit-scrollbar-track {
-        background: #020617;
-      }
-
-      body.show-scrollbar ::-webkit-scrollbar-thumb {
-        background: #ffaff3;
-        border-radius: 5px;
-      }
-      .dark body.show-scrollbar ::-webkit-scrollbar-thumb {
-        background: #4c1d95; 
-      }
-      
-      body.show-scrollbar ::-webkit-scrollbar-thumb:hover {
-        background: #fc8ce8;
-      }
-      .dark body.show-scrollbar ::-webkit-scrollbar-thumb:hover {
-        background: #6d28d9; 
-      }
-      
-      :focus-visible {
-        outline: 2px solid #292d3e;
-        outline-offset: 2px;
-      }
-      .dark :focus-visible {
-        outline: 2px solid #ffaff3;
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18.3.1",
-    "react/": "https://esm.sh/react@18.3.1/",
-    "react-dom/": "https://esm.sh/react-dom@18.3.1/",
-    "lucide-react": "https://esm.sh/lucide-react@0.294.0",
-    "clsx": "https://esm.sh/clsx@2.1.1",
-    "uuid": "https://esm.sh/uuid@9.0.1",
-    "jszip": "https://esm.sh/jszip@3.10.1",
-    "dompurify": "https://esm.sh/dompurify@3.0.6"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+    <link rel="stylesheet" href="/index.css">
+  </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
+

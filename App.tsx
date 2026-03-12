@@ -248,60 +248,62 @@ const App = () => {
                       </button>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-3" role="list">
-                    {sortedJobs.map((job, index) => {
-                      const seq = settings.renaming.startSequence + index;
-                      const downloadName = generateFilename(
-                        job.file.name,
-                        settings.renaming.pattern,
-                        seq,
-                      );
+                  <div className="max-h-[480px] overflow-y-auto job-queue-scroll rounded-2xl">
+                    <div className="flex flex-col gap-3" role="list">
+                      {sortedJobs.map((job, index) => {
+                        const seq = settings.renaming.startSequence + index;
+                        const downloadName = generateFilename(
+                          job.file.name,
+                          settings.renaming.pattern,
+                          seq,
+                        );
 
-                      let ext = extensionMap[settings.outputFormat] || 'png';
+                        let ext = extensionMap[settings.outputFormat] || 'png';
 
-                      if (settings.maintainOriginalFormat) {
-                        const inputExt = job.file.name
-                          .split('.')
-                          .pop()
-                          ?.toLowerCase();
-                        if (
-                          inputExt &&
-                          [
-                            'png',
-                            'jpg',
-                            'jpeg',
-                            'webp',
-                            'avif',
-                            'jxl',
-                            'qoi',
-                          ].includes(inputExt)
-                        ) {
-                          ext = inputExt === 'jpeg' ? 'jpg' : inputExt;
-                        } else if (inputExt === 'gif') {
-                          ext = 'png';
-                        }
-                      }
-
-                      if (job.status === 'done' && job.optimizedBlob) {
-                        ext = mimeToExt[job.optimizedBlob.type] || ext;
-                      }
-
-                      const displayName = `${downloadName}.${ext}`;
-
-                      return (
-                        <JobCard
-                          key={job.id}
-                          job={job}
-                          onRemove={removeJob}
-                          onCopySuccess={() =>
-                            showToast('Copied to clipboard!')
+                        if (settings.maintainOriginalFormat) {
+                          const inputExt = job.file.name
+                            .split('.')
+                            .pop()
+                            ?.toLowerCase();
+                          if (
+                            inputExt &&
+                            [
+                              'png',
+                              'jpg',
+                              'jpeg',
+                              'webp',
+                              'avif',
+                              'jxl',
+                              'qoi',
+                            ].includes(inputExt)
+                          ) {
+                            ext = inputExt === 'jpeg' ? 'jpg' : inputExt;
+                          } else if (inputExt === 'gif') {
+                            ext = 'png';
                           }
-                          onInspect={setInspectedJob}
-                          downloadFilename={downloadName}
-                          displayName={displayName}
-                        />
-                      );
-                    })}
+                        }
+
+                        if (job.status === 'done' && job.optimizedBlob) {
+                          ext = mimeToExt[job.optimizedBlob.type] || ext;
+                        }
+
+                        const displayName = `${downloadName}.${ext}`;
+
+                        return (
+                          <JobCard
+                            key={job.id}
+                            job={job}
+                            onRemove={removeJob}
+                            onCopySuccess={() =>
+                              showToast('Copied to clipboard!')
+                            }
+                            onInspect={setInspectedJob}
+                            downloadFilename={downloadName}
+                            displayName={displayName}
+                          />
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               )}
