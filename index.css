@@ -130,48 +130,6 @@ body {
   background-attachment: fixed;
 }
 
-/* ── Scrollbars (global) ────────────────────────────────────────── */
-
-/* Default: Hidden */
-::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
-  background: transparent;
-}
-* {
-  scrollbar-width: none;
-}
-
-/* Visible Scrollbar Class */
-body.show-scrollbar ::-webkit-scrollbar {
-  width: 10px;
-}
-body.show-scrollbar * {
-  scrollbar-width: auto;
-}
-
-body.show-scrollbar ::-webkit-scrollbar-track {
-  background: #fff9f5;
-}
-.dark body.show-scrollbar ::-webkit-scrollbar-track {
-  background: #020617;
-}
-
-body.show-scrollbar ::-webkit-scrollbar-thumb {
-  background: #ffaff3;
-  border-radius: 5px;
-}
-.dark body.show-scrollbar ::-webkit-scrollbar-thumb {
-  background: #4c1d95;
-}
-
-body.show-scrollbar ::-webkit-scrollbar-thumb:hover {
-  background: #fc8ce8;
-}
-.dark body.show-scrollbar ::-webkit-scrollbar-thumb:hover {
-  background: #6d28d9;
-}
-
 /* ── Job queue scrollable area ──────────────────────────────────── */
 
 .job-queue-scroll {
